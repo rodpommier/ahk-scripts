@@ -1,0 +1,20 @@
+#SingleInstance, Force
+
+file = C:\Users\roder\OneDrive\Pictures\ahk_legend.png ; Replace as needed
+color = FFFFFF ; White
+;Gui, New ; best to never use Gui, New.  causes more problems than anything
+Gui, Add, Picture,, %file%
+Gui, Color, %color%
+Gui, +LastFound -Caption +AlwaysOnTop +ToolWindow -Border
+;Winset, TransColor, %color%
+return
+
+^+F1:: 
+	toggle := !toggle
+	if toggle
+		Gui, Show, x100 y100
+	else
+		Gui, Cancel
+return
+
+F4::ExitApp
